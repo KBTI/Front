@@ -6,9 +6,10 @@ export interface QuestionItemTypes {
 export interface AnswerItemTypes {
   id: number;
   text: string;
-  target: 'D' | 'C' | 'J' | 'P' | 'I' | 'E' | 'JP';
+  target: TargetTyep;
   score: number;
 }
+export type TargetTyep = 'D' | 'C' | 'J' | 'P' | 'I' | 'E' | 'JP';
 
 export const QUESTION_LIST: QuestionItemTypes[] = [
   {
@@ -205,14 +206,15 @@ export const QUESTION_LIST: QuestionItemTypes[] = [
   },
 ];
 
-export interface ReustTypes {
+export interface ResultTypes {
   id: number;
-  name: 'CE' | 'CI' | 'DEJ' | 'DIJ' | 'DEP' | 'DIP';
+  name: ResultNameType;
   title: string;
   contants: string[];
 }
+export type ResultNameType = 'CE' | 'CI' | 'DEJ' | 'DIJ' | 'DEP' | 'DIP';
 
-export const RESULT_LIST: ReustTypes[] = [
+export const RESULT_LIST: ResultTypes[] = [
   {
     id: 1,
     name: 'CE',
@@ -236,17 +238,6 @@ export const RESULT_LIST: ReustTypes[] = [
   },
   {
     id: 3,
-    name: 'CI',
-    title: '소극/친일파',
-    contants: [
-      '당신은 앞잡이',
-      '자그마한 이익이라도 포기하지 못하고 포기하지 못하는 사람. 하지만 배포도 많지 않아 쫌쫌따리 해먹는 사람이에요.',
-      '주위사람을 버리고 당장의 이익을 쫓았지만 얻는 것 하나도 없이 당신은 쓰고 버려지는 패로 팽당했을 거에요',
-      '혹시라도 지금 잘살고 있다면 전재산 환원하세요. ',
-    ],
-  },
-  {
-    id: 4,
     name: 'DEP',
     title: '적극/무계획 - 의리의 독립투사',
     contants: [
@@ -256,7 +247,7 @@ export const RESULT_LIST: ReustTypes[] = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     name: 'DEJ',
     title: '적극/계획 - 앞장서는 의사',
     contants: [
@@ -268,7 +259,7 @@ export const RESULT_LIST: ReustTypes[] = [
     ],
   },
   {
-    id: 6,
+    id: 5,
     name: 'DIP',
     title: '소극/무계획 - 마음속 ~~~ 지사',
     contants: [
