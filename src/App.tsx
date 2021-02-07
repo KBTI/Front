@@ -4,16 +4,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Result from './components/Result';
 import Layout from './components/common/Layout';
+import { KbtiContextProvider } from './components/context';
+import Question from './components/Question';
 
 function App(): JSX.Element {
   return (
     <Router>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/result/:id" component={Result} />
-        </Switch>
-      </Layout>
+      <KbtiContextProvider>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/question" component={Question} />
+            <Route exact path="/result/:id" component={Result} />
+          </Switch>
+        </Layout>
+      </KbtiContextProvider>
     </Router>
   );
 }
