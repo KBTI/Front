@@ -3,10 +3,19 @@ import styled from 'styled-components';
 
 interface ButtonPropsType {
   children?: React.ReactElement | string;
+  onClick?: (target?: any) => void;
 }
 
-export default function Button({ children, ...props }: ButtonPropsType) {
-  return <StyledButton {...props}>{children}</StyledButton>;
+export default function Button({
+  onClick,
+  children,
+  ...props
+}: ButtonPropsType) {
+  return (
+    <StyledButton onClick={onClick} {...props}>
+      {children}
+    </StyledButton>
+  );
 }
 
 const StyledButton = styled.button`
