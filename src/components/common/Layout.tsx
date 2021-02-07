@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface LayoutPropsType {
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
-function Layout({ children }: LayoutPropsType) {
-  return <LayoutWrapper>{children}</LayoutWrapper>;
+function Layout({ children, ...props }: LayoutPropsType) {
+  return <LayoutWrapper {...props}>{children}</LayoutWrapper>;
 }
 export default Layout;
 
@@ -27,6 +27,5 @@ const LayoutWrapper = styled.div`
   & > div {
     width: 100%;
     height: 100%;
-    min-height: 90vh;
   }
 `;
