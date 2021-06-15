@@ -9,7 +9,7 @@ import { useKbtiDispatch, useKbtiState } from '../context';
 
 interface useQuestionReturnType {
   questionIndex: number;
-  handleButtonClick: (item: AnswerItemTypes) => void;
+  handleButtonClick: () => void;
 }
 
 export default function useQuestion(): useQuestionReturnType {
